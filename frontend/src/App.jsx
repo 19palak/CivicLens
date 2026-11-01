@@ -644,7 +644,11 @@ function IssueReports({
                         {issue.photo_url && (
                           <img
                             className="issue-photo-thumbnail"
-                            src={`http://127.0.0.1:8000${issue.photo_url}`}
+                            src={
+                              issue.photo_url?.startsWith("http")
+                                ? issue.photo_url
+                                : `https://civiclens-api-39xh.onrender.com${issue.photo_url}`
+                            }
                             alt={`Photo for ${issue.title}`}
                           />
                         )}
