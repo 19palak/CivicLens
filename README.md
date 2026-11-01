@@ -4,6 +4,14 @@ CivicLens is a web-based civic issue reporting and monitoring platform designed 
 
 The platform provides a centralized dashboard where civic issues can be reported, monitored, and analyzed, helping communities improve transparency and civic engagement.
 
+## 🌐 Live Demo
+
+**[Visit CivicLens](https://civic-lens-lyart.vercel.app/)**
+
+**[GitHub Repository](https://github.com/19palak/CivicLens)**
+
+---
+
 ## 🌍 Problem Statement
 
 Citizens often face difficulties reporting local civic problems and tracking whether those problems have been resolved.
@@ -16,18 +24,20 @@ This can lead to delayed action, repeated complaints, and limited communication 
 
 CivicLens provides a centralized digital platform where citizens can report civic issues and monitor their status.
 
-The platform allows users to submit issue details, view reported problems on a map, and explore dashboard analytics to understand the distribution and status of civic issues.
+The platform allows users to submit issue details, upload supporting photographs, view reported problems on a community map, and explore dashboard analytics to understand the distribution and status of civic issues.
 
 ## ✨ Key Features
 
-- **Civic Issue Reporting:** Report issues such as potholes, garbage, water leakage, drainage problems, and streetlight failures.
-- **Issue Management Dashboard:** View and monitor reported civic issues in a centralized dashboard.
+- **Civic Issue Reporting:** Report problems such as potholes, garbage accumulation, water leakage, drainage issues, and streetlight failures.
+- **Issue Management Dashboard:** View and monitor reported civic issues through a centralized dashboard.
 - **Community Map:** Visualize reported issues based on their locations.
 - **Analytics Dashboard:** Explore issue statistics, categories, priorities, and statuses.
-- **Issue Tracking:** Track the progress of reported issues through different statuses.
+- **Issue Tracking:** Monitor reported issues through different statuses, including Under Review, In Progress, and Resolved.
 - **Photo Upload:** Attach images to reports to provide visual evidence of the issue.
 - **Priority Classification:** Categorize issues based on their urgency.
-- **User-Friendly Interface:** Simple and intuitive interface for reporting and monitoring civic problems.
+- **Issue Deletion:** Delete issue reports from the Issue Reports section.
+- **Search and Filtering:** Search issue reports and filter them based on their status.
+- **Responsive Interface:** A user-friendly interface designed for convenient issue reporting and monitoring.
 
 ## 🛠️ Tech Stack
 
@@ -36,7 +46,8 @@ The platform allows users to submit issue details, view reported problems on a m
 - Vite
 - JavaScript
 - CSS
-- Leaflet (for map visualization)
+- React Leaflet
+- Leaflet
 
 ### Backend
 - Python
@@ -45,6 +56,10 @@ The platform allows users to submit issue details, view reported problems on a m
 ### Database
 - SQLite
 - SQLAlchemy
+
+### Deployment
+- Vercel — Frontend
+- Render — Backend
 
 ### Tools
 - Git
@@ -59,32 +74,16 @@ CivicLens follows a frontend-backend architecture.
 CivicLens/
 │
 ├── backend/
-│   │
-│   ├── __pycache__/
-│   │
 │   ├── uploads/
-│   │
-│   ├── venv/
-│   │
-│   ├── civiclens_backup.db
-│   ├── civiclens.db
-│   │
 │   ├── database.py
 │   ├── main.py
-│   └── models.py
+│   ├── models.py
+│   └── requirements.txt
 │
 ├── frontend/
-│   │
-│   ├── frontend/
-│   │
-│   ├── node_modules/
-│   │
 │   ├── public/
-│   │
 │   ├── src/
-│   │   │
 │   │   ├── assets/
-│   │   │
 │   │   ├── App.css
 │   │   ├── App.jsx
 │   │   ├── Auth.css
@@ -93,15 +92,14 @@ CivicLens/
 │   │   └── main.jsx
 │   │
 │   ├── .gitignore
-│   ├── .oxlintrc.json
 │   ├── index.html
-│   ├── package-lock.json
 │   ├── package.json
-│   ├── README.md
+│   ├── package-lock.json
 │   └── vite.config.js
 │
 └── .gitignore
 ```
+
 ## 🚀 Getting Started
 
 Follow these steps to run CivicLens locally.
@@ -117,10 +115,10 @@ Make sure you have the following installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/CivicLens.git
+git clone https://github.com/19palak/CivicLens.git
 ```
 
-Navigate to the project folder:
+Navigate to the project directory:
 
 ```bash
 cd CivicLens
@@ -134,7 +132,7 @@ Navigate to the backend directory:
 cd backend
 ```
 
-Create and activate a virtual environment:
+Create a virtual environment:
 
 ```bash
 python3 -m venv venv
@@ -146,7 +144,7 @@ Activate the virtual environment on macOS/Linux:
 source venv/bin/activate
 ```
 
-Install backend dependencies:
+Install the required dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -170,7 +168,7 @@ http://127.0.0.1:8000/docs
 
 Open another terminal window.
 
-Navigate to the frontend directory:
+Navigate to the frontend directory from the project root:
 
 ```bash
 cd CivicLens/frontend
@@ -202,11 +200,11 @@ CivicLens aims to:
 - Support efficient monitoring of issue statuses.
 - Promote transparency and accountability in civic issue management.
 
-## 🎯 Hackathon Track
+## 🎯 Hackathon
 
-**Smart Society and Social Impact**
+**NexHack 3.0 — Build What's Next**
 
-NexHack 3.0 — Build What's Next
+**Track:** Smart Society and Social Impact
 
 ## 🔮 Future Enhancements
 
@@ -222,6 +220,8 @@ NexHack 3.0 — Build What's Next
 
 Developed by:
 
--Palak Jain
--Vedika Therokar
+- Palak Jain
+- Vedika Therokar
+
+---
 
