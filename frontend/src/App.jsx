@@ -878,9 +878,9 @@ function IssueDetail({ issue, onClose }) {
           <img
             className="issue-detail-photo"
             src={
-              selectedIssue.photo_url?.startsWith("http")
-                ? selectedIssue.photo_url
-                : `https://civiclens-api-39xh.onrender.com${selectedIssue.photo_url}`
+              issue.photo_url.startsWith("http")
+                ? issue.photo_url
+                : `https://civiclens-api-39xh.onrender.com${issue.photo_url}`
             }
             alt={`Photo for ${issue.title}`}
           />
