@@ -14,7 +14,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
-const API_URL = "http://127.0.0.1:8000/api";
+const API_URL = "https://civiclens-api-39xh.onrender.com/api";
 
 const navigation = [
   { label: "Dashboard", icon: LayoutDashboard },
