@@ -127,7 +127,7 @@ function App() {
   );
 
   // Attach the saved photo URL to the issue
-  savedIssue.photo_url = uploadResponse.data.photo_url;
+  savedIssue.photo_url = `https://civiclens-api-39xh.onrender.com${uploadResponse.data.photo_url}`;
 }
 
       setIssues((previous) => [savedIssue, ...previous]);
