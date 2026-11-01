@@ -56,23 +56,51 @@ The platform allows users to submit issue details, view reported problems on a m
 CivicLens follows a frontend-backend architecture.
 
 ```text
-CivicLens
-│
-├── frontend/
-│   ├── src/
-│   ├── public/
-│   ├── package.json
-│   └── ...
+CivicLens/
 │
 ├── backend/
-│   ├── main.py
-│   ├── models.py
-│   ├── database.py
+│   │
+│   ├── __pycache__/
+│   │
+│   ├── uploads/
+│   │
+│   ├── venv/
+│   │
+│   ├── civiclens_backup.db
 │   ├── civiclens.db
-│   └── ...
+│   │
+│   ├── database.py
+│   ├── main.py
+│   └── models.py
 │
-└── README.md
-```
+├── frontend/
+│   │
+│   ├── frontend/
+│   │
+│   ├── node_modules/
+│   │
+│   ├── public/
+│   │
+│   ├── src/
+│   │   │
+│   │   ├── assets/
+│   │   │
+│   │   ├── App.css
+│   │   ├── App.jsx
+│   │   ├── Auth.css
+│   │   ├── Auth.jsx
+│   │   ├── index.css
+│   │   └── main.jsx
+│   │
+│   ├── .gitignore
+│   ├── .oxlintrc.json
+│   ├── index.html
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── README.md
+│   └── vite.config.js
+│
+└── .gitignore
 
 ## 🚀 Getting Started
 
