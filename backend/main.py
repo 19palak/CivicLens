@@ -47,7 +47,7 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:5173",
         "http://127.0.0.1:5173",
-        "https://civic-lens-amber.vercel.app"
+        "https://civic-lens-lyart.vercel.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -141,6 +141,7 @@ def get_current_user(
         db.refresh(user)
 
     return user
+
 
 # Home endpoint
 @app.get("/")
