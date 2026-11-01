@@ -141,7 +141,35 @@ function App() {
       );
     }
   }
+  // Delete an issue report
+async function deleteIssue(issue) {
+  const confirmed = window.confirm(
+    `Are you sure you want to delete "${issue.title}"?`
+  );
 
+  if (!confirmed) return;
+
+  try {
+    // Convert CL-0001 back to the numeric backend ID
+    const issueId = Number(String(issue.id).replace("CL-", ""));
+
+    await axios.delete(`${API_URL}/issues/${issueId}`);
+
+    // Remove the deleted issue from the frontend
+    setIssues((previous) =>
+      previous.filter((item) => item.id !== issue.id)
+    );
+
+    alert("Issue deleted successfully!");
+  } catch (error) {
+    console.error("Failed to delete issue:", error);
+
+    alert(
+      error.response?.data?.detail ||
+      "Failed to delete issue. Please try again."
+    );
+  }
+}
   function navigate(page) {
     setActivePage(page);
     setMenuOpen(false);
@@ -301,6 +329,7 @@ function App() {
               statusFilter={statusFilter}
               setStatusFilter={setStatusFilter}
               onReport={() => setShowReportForm(true)}
+              onDelete={deleteIssue}
               loading={issuesLoading}
             />
           )}
@@ -563,6 +592,7 @@ function IssueReports({
   statusFilter,
   setStatusFilter,
   onReport,
+  onDelete,
   loading
 }) {
   const visible = statusFilter === "All status"
@@ -634,6 +664,7 @@ function IssueReports({
                   <th>PRIORITY</th>
                   <th>STATUS</th>
                   <th>REPORTED</th>
+                  <th>ACTION</th>
                 </tr>
               </thead>
               <tbody>
@@ -670,6 +701,17 @@ function IssueReports({
                       </span>
                     </td>
                     <td>{issue.date}</td>
+
+                      <td>
+                        <button
+                          className="delete-issue-button"
+                          onClick={() => onDelete(issue)}
+                          title="Delete issue"
+                          aria-label={`Delete ${issue.title}`}
+                        >
+                          <Trash2 size={16} />
+                        </button>
+                      </td>
                   </tr>
                 ))}
               </tbody>

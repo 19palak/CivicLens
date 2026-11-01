@@ -355,3 +355,37 @@ def upload_issue_photo(
         "filename": filename,
         "photo_url": issue.photo_url
     }
+
+# Delete an issue
+@app.delete("/api/issues/{issue_id}")
+def delete_issue(
+    issue_id: int,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user)
+):
+    # Find the issue
+    issue = db.query(Issue).filter(
+        Issue.id == issue_id
+    ).first()
+
+    # Check if issue exists
+    if not issue:
+        raise HTTPException(
+            status_code=404,
+            detail="Issue not found"
+        )
+
+    # Only the user who created the issue can delete it
+    if issue.user_id != current_user.id:
+        raise HTTPException(
+            status_code=403,
+            detail="You cannot delete this issue"
+        )
+
+    # Delete the issue from database
+    db.delete(issue)
+    db.commit()
+
+    return {
+        "message": "Issue deleted successfully"
+    }
