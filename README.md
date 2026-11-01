@@ -101,7 +101,7 @@ CivicLens/
 │   └── vite.config.js
 │
 └── .gitignore
-
+```
 ## 🚀 Getting Started
 
 Follow these steps to run CivicLens locally.
